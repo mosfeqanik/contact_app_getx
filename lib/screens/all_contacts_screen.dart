@@ -1,23 +1,30 @@
+import 'package:contacts_app_getx/controller/all_contacts_controller.dart';
+import 'package:contacts_app_getx/model/contact_details.dart';
 import 'package:contacts_app_getx/utils/app_colors.dart';
 import 'package:contacts_app_getx/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+
 
 class AllContactListPage extends StatelessWidget {
-  const AllContactListPage({Key? key}) : super(key: key);
+
+  final HomeViewController _controller=Get.put(HomeViewController());
 
   @override
   Widget build(BuildContext context) {
+    // List<ContactDetails> usersDataList = _controller.userDataList as List<ContactDetails>;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
-          "Contacts",
-          style: TextThemes.HeaderStylePage,
-        ),
+        title:  Obx(()=>Text('${_controller.appName}', style: TextThemes.HeaderStylePage,),),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _controller.callBottomSheet();
+            },
             icon: const Icon(
               Icons.add_outlined,
               color: AppColors.kTenPinkColor,
