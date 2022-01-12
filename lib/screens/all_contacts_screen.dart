@@ -18,7 +18,7 @@ class AllContactListPage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.add_outlined,
                 color: AppColors.kTenPinkColor,
                 size: 35,
@@ -26,41 +26,50 @@ class AllContactListPage extends StatelessWidget {
           SizedBox(width: 20,)
         ],
       ),
-      body: Column(children: [
-        Expanded(
-          child: SizedBox(
-            height: 50,
-            child: TextFormField(
-                readOnly: true,
-                decoration: const InputDecoration(
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius:
-                      BorderRadius.all(Radius.circular(18)),
-                      borderSide: BorderSide(color: Colors.blue),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius:
-                      BorderRadius.all(Radius.circular(18)),
-                      borderSide: BorderSide(
-                        color: AppColors.kSecondaryGreyColor,
-                      ),
-                    ),
-                    hintText: "Search",
-                    hintStyle: TextStyle(
-                      fontSize: 15,
-                      color: AppColors.kSecondaryGreyColor,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search_outlined,
-                      color: AppColors.kSecondaryGreyColor,
-                      size: 20,
-                    )),
-                onTap: () {
-                }),
-          ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+          Expanded(
+            child: SizedBox(
+              height: 40,
+              child: TextFormField(
+                  decoration: InputDecoration(
+                      filled: true,
+                        focusColor: AppColors.kSecondaryGreyColorTextFieldBox,
+                        fillColor: AppColors.kSecondaryGreyColorTextFieldBox,
+                        focusedBorder: buildOutlineInputBorderBlue(),
+                        enabledBorder: buildOutlineInputBorder(),
+                        hintText: "Search",
+                        hintStyle: TextThemes.SearchBoxHintText,
+                        prefixIcon: const Icon(
+                          Icons.search_outlined,
+                          color: AppColors.kSecondaryGreyColor,
+                          size: 30,
+                        )),
+                    onTap: () {}),
+              ),
+            ),
+          ],
         ),
-      ],),
+      ),
+    );
+  }
+
+  OutlineInputBorder buildOutlineInputBorderBlue() {
+    return const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderSide: BorderSide(color: Colors.blue),
+    );
+  }
+
+  OutlineInputBorder buildOutlineInputBorder() {
+    return const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderSide: BorderSide(
+        color: AppColors.kSecondaryGreyColor,
+      ),
     );
   }
 }

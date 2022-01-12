@@ -8,6 +8,10 @@ class TextThemes {
     fontSize: 30,
     color: AppColors.kTenBlackColor
   );
+  static final TextStyle SearchBoxHintText = GoogleFonts.roboto(
+      fontSize: 20,
+    color: AppColors.kSecondaryGreyColor,
 
+  );
 
 }

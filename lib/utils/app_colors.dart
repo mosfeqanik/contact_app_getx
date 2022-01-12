@@ -8,6 +8,6 @@ class AppColors {
   static const Color kTenBlackColor = Color(0xff262626);
   static const Color kTenPinkColor = Color(0xfffa5d56);
   static const Color kSecondaryGreyColor = Color(0xffa0a0a0);
-
+  static const Color kSecondaryGreyColorTextFieldBox = Color(0xfff1eded);
 
 }
