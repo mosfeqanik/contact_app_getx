@@ -11,7 +11,15 @@ class TextThemes {
   static final TextStyle SearchBoxHintText = GoogleFonts.roboto(
       fontSize: 20,
     color: AppColors.kSecondaryGreyColor,
-
+  );
+  static final TextStyle ListVIewTitleTextStyle = GoogleFonts.roboto(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColors.kTenBlackColor,
+  );
+  static final TextStyle SubtitleTextStyle = GoogleFonts.roboto(
+    fontSize: 15,fontWeight: FontWeight.w600,
+    color: AppColors.kSecondaryGreyColor,
   );
 
 }

@@ -17,41 +17,79 @@ class AllContactListPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.add_outlined,
-                color: AppColors.kTenPinkColor,
-                size: 35,
-              )),
-          SizedBox(width: 20,)
+            onPressed: () {},
+            icon: const Icon(
+              Icons.add_outlined,
+              color: AppColors.kTenPinkColor,
+              size: 35,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-          Expanded(
-            child: SizedBox(
-              height: 40,
-              child: TextFormField(
-                  decoration: InputDecoration(
-                      filled: true,
-                        focusColor: AppColors.kSecondaryGreyColorTextFieldBox,
-                        fillColor: AppColors.kSecondaryGreyColorTextFieldBox,
-                        focusedBorder: buildOutlineInputBorderBlue(),
-                        enabledBorder: buildOutlineInputBorder(),
-                        hintText: "Search",
-                        hintStyle: TextThemes.SearchBoxHintText,
-                        prefixIcon: const Icon(
-                          Icons.search_outlined,
-                          color: AppColors.kSecondaryGreyColor,
-                          size: 30,
-                        )),
-                    onTap: () {}),
-              ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 55,
+                  child: TextFormField(
+                      decoration: InputDecoration(
+                          filled: true,
+                          focusColor: AppColors.kSecondaryGreyColorTextFieldBox,
+                          fillColor: AppColors.kSecondaryGreyColorTextFieldBox,
+                          focusedBorder: buildOutlineInputBorderBlue(),
+                          enabledBorder: buildOutlineInputBorder(),
+                          hintText: "Search",
+                          hintStyle: TextThemes.SearchBoxHintText,
+                          prefixIcon: const Icon(
+                            Icons.search_outlined,
+                            color: AppColors.kSecondaryGreyColor,
+                            size: 25,
+                          )),
+                      onTap: () {}),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 20),
+                  height: 600,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                          width: 80,
+                          child: Divider(
+                            color: AppColors.kSecondaryGreyColor,
+                          ));
+                    },
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return SizedBox(
+                        width: 120,
+                        child: ListTile(
+                          leading: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/users%2Fphoto-1633332755192-727a05c4013d.jpeg?alt=media&token=dbbbbc10-101e-44ac-8f02-3185f9616301',
+                              fit: BoxFit.fitHeight,
+                              height: 80,
+                            ),
+                          ),
+                          title: Text("Amilia Ellie",
+                              style: TextThemes.ListVIewTitleTextStyle),
+                          subtitle: Text("South Sourma",
+                              style: TextThemes.SubtitleTextStyle),
+                        ),
+                      );
+                    },
+                  ),
+                )
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
