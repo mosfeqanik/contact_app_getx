@@ -1,4 +1,4 @@
-import 'package:contacts_app_getx/model/contact_details.dart';
+import 'package:contacts_app_getx/screens/contacts_list/contact_model/contact_details.dart';
 import 'package:contacts_app_getx/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

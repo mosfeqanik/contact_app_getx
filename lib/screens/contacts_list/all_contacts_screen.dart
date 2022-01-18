@@ -1,10 +1,12 @@
-import 'package:contacts_app_getx/controller/all_contacts_controller.dart';
-import 'package:contacts_app_getx/model/contact_details.dart';
+import 'package:contacts_app_getx/screens/contacts_list/all_contacts_controller.dart';
+import 'package:contacts_app_getx/screens/contacts_list/contact_model/contact_details.dart';
+import 'package:contacts_app_getx/screens/user_list/user_details.dart';
 import 'package:contacts_app_getx/utils/app_colors.dart';
 import 'package:contacts_app_getx/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
@@ -28,6 +30,19 @@ class AllContactListPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              Get.to(() => userPage());
+            },
+            icon: const Icon(
+              Icons.speaker_notes,
+              color: AppColors.kTenPinkColor,
+              size: 35,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          IconButton(
+            onPressed: () {
               _controller.callBottomSheet();
             },
             icon: const Icon(
@@ -36,9 +51,6 @@ class AllContactListPage extends StatelessWidget {
               size: 35,
             ),
           ),
-          const SizedBox(
-            width: 20,
-          )
         ],
       ),
       body: SafeArea(
