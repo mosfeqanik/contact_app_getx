@@ -1,22 +1,21 @@
-import 'package:contacts_app_getx/screens/user_list/post_details_controller.dart';
+import 'package:contacts_app_getx/screens/post_list/post_details_controller.dart';
 import 'package:contacts_app_getx/utils/app_colors.dart';
 import 'package:contacts_app_getx/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:get/get.dart';
 
-class userPage extends StatelessWidget {
+
+class PostPage extends StatelessWidget {
   final Posts _controller = Get.put(Posts());
 
   @override
   Widget build(BuildContext context) {
-    // var IsLoading = EasyLoading.show(status: 'loading...');
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        elevation: 0,
+        elevation: .5,
         title: Obx(
           () => Text(
             '${_controller.appName}',
@@ -57,30 +56,44 @@ class userPage extends StatelessWidget {
             itemBuilder: (context, index) {
               return SizedBox(
                 width: 120,
-                child: ListTile(
-                  leading: Container(
-                    child: Text(
-                      _controller.updatedPostListAPI[index].id.toString() ??
-                          "no id",
-                      style: TextThemes.leadingTextStyle,
+                child: GestureDetector(
+                  onTap: (){
+                    Get.toNamed(
+                      '/SinglePostPage/',
+                      arguments: {
+                        'title': _controller.updatedPostListAPI[index].title ??
+                            "no tittle",
+                        'id':_controller.updatedPostListAPI[index].id.toString() ??
+                            "no id",
+                        'body': _controller.updatedPostListAPI[index].body ??
+                            "No body Available",
+
+                      },
+                    );
+                  },
+                  child: ListTile(
+                    leading: Container(
+                      child: Text(
+                        _controller.updatedPostListAPI[index].id.toString() ??
+                            "no id",
+                        style: TextThemes.leadingTextStyle,
+                      ),
                     ),
+                    title: Text(
+                        _controller.updatedPostListAPI[index].title ??
+                            "no tittle",
+                        style: TextThemes.ListVIewTitleTextStyle),
+                    subtitle: Text(
+                        _controller.updatedPostListAPI[index].body ??
+                            "No body Available",
+                        style: TextThemes.SubtitleTextStyle),
                   ),
-                  title: Text(
-                      _controller.updatedPostListAPI[index].title ??
-                          "no tittle",
-                      style: TextThemes.ListVIewTitleTextStyle),
-                  subtitle: Text(
-                      _controller.updatedPostListAPI[index].body ??
-                          "No body Available",
-                      style: TextThemes.SubtitleTextStyle),
                 ),
               );
             },
           ),
         ),
       ),
-
-
         );
   }
 }

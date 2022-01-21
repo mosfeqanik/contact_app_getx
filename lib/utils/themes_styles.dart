@@ -8,6 +8,11 @@ class TextThemes {
     fontSize: 30,
     color: AppColors.kTenBlackColor
   );
+  static final TextStyle HeaderSinglePostPage = GoogleFonts.playfairDisplay(
+      fontSize: 30,
+      color: AppColors.kTenPinkColor
+  );
+
   static final TextStyle SearchBoxHintText = GoogleFonts.roboto(
       fontSize: 20,
     color: AppColors.kSecondaryGreyColor,
