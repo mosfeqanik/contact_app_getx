@@ -1,5 +1,5 @@
 import 'package:contacts_app_getx/screens/contacts_list/all_contacts_screen.dart';
-import 'package:contacts_app_getx/screens/user_list/user_details.dart';
+import 'package:contacts_app_getx/screens/user_list/post_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';

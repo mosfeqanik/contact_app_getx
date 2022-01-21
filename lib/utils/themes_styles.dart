@@ -21,5 +21,9 @@ class TextThemes {
     fontSize: 15,fontWeight: FontWeight.w600,
     color: AppColors.kSecondaryGreyColor,
   );
+  static final TextStyle leadingTextStyle = GoogleFonts.roboto(
+    fontSize: 25,fontWeight: FontWeight.w800,
+    color: AppColors.kTenPinkColor,
+  );
 
 }

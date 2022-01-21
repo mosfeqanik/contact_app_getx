@@ -5,14 +5,16 @@ import 'package:get/get.dart';
 
 import 'model/post_model.dart';
 
-class UserDetails extends GetxController {
+class Posts extends GetxController {
   var updatedPostListAPI = <PostModel>[].obs;
+  var appName = ''.obs;
 
   // var loadingStatus = false.obs;
 
   @override
   void onInit() {
     _getJsonHolderData();
+    appName.value='Posts';
     super.onInit();
   }
 

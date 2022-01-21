@@ -1,6 +1,6 @@
 import 'package:contacts_app_getx/screens/contacts_list/all_contacts_controller.dart';
 import 'package:contacts_app_getx/screens/contacts_list/contact_model/contact_details.dart';
-import 'package:contacts_app_getx/screens/user_list/user_details.dart';
+import 'package:contacts_app_getx/screens/user_list/post_details.dart';
 import 'package:contacts_app_getx/utils/app_colors.dart';
 import 'package:contacts_app_getx/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
