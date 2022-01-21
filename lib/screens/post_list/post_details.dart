@@ -13,7 +13,7 @@ class PostPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         centerTitle: true,
         elevation: .5,
         title: Obx(
